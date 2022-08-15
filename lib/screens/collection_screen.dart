@@ -27,12 +27,7 @@ class CollectionScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: Column(
-        children: [
-          ElevatedButton(
-            onPressed: () {},
-            child: Text('Crazy ass button'),
-          )
-        ],
+        children: [],
       ),
       bottomNavigationBar: CustomBottomNavigationBar(),
     );
