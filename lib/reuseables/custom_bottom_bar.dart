@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:ecommerce/screens/collection_screen.dart';
 import 'package:ecommerce/screens/explore_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -31,7 +32,9 @@ class _CustomBottomNavigationBar extends State<CustomBottomNavigationBar> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, CollectionScreen.id);
+              },
               icon: Icon(
                 Icons.home_outlined,
                 size: _iconSize,
