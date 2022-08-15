@@ -5,6 +5,7 @@ import "package:flutter/material.dart";
 import '../reuseables/custom_bottom_bar.dart';
 
 class CollectionScreen extends StatelessWidget {
+  static const String id = 'collections_screen';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

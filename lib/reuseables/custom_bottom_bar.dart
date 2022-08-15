@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:ecommerce/screens/explore_screen.dart';
 import 'package:flutter/material.dart';
 
 const double _iconSize = 30;
@@ -37,7 +38,9 @@ class _CustomBottomNavigationBar extends State<CustomBottomNavigationBar> {
               ),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, ExploreScreen.id);
+              },
               icon: Icon(
                 Icons.person_outline,
                 size: _iconSize,
