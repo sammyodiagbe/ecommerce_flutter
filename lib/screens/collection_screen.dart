@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import "package:flutter/material.dart";
+import '../reuseables/custom_bottom_bar.dart';
 
 class CollectionScreen extends StatelessWidget {
   @override
@@ -33,6 +34,7 @@ class CollectionScreen extends StatelessWidget {
           )
         ],
       ),
+      bottomNavigationBar: CustomBottomNavigationBar(),
     );
   }
 }
