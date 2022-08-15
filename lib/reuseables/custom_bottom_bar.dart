@@ -45,14 +45,14 @@ class _CustomBottomNavigationBar extends State<CustomBottomNavigationBar> {
                 Navigator.pushNamed(context, ExploreScreen.id);
               },
               icon: Icon(
-                Icons.person_outline,
+                Icons.apps_outlined,
                 size: _iconSize,
               ),
             ),
             IconButton(
               onPressed: () {},
               icon: Icon(
-                Icons.settings_outlined,
+                Icons.person_outline,
                 size: _iconSize,
               ),
             ),

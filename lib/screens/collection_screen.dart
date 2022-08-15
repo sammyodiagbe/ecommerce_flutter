@@ -9,7 +9,7 @@ class CollectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppAppBar('Collections'),
+      appBar: AppAppBar('Collections', context),
       body: Column(
         children: [],
       ),

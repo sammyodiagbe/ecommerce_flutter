@@ -9,7 +9,7 @@ class ExploreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppAppBar('Explore'),
+      appBar: AppAppBar('Explore', context),
       bottomNavigationBar: CustomBottomNavigationBar(),
     );
   }

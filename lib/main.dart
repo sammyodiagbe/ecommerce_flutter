@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:ecommerce/screens/cart_screens.dart';
 import 'package:ecommerce/screens/collection_screen.dart';
 import 'package:ecommerce/screens/explore_screen.dart';
 import "package:flutter/material.dart";
@@ -15,7 +16,8 @@ class EcommerceApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         CollectionScreen.id: (context) => CollectionScreen(),
-        ExploreScreen.id: (context) => ExploreScreen()
+        ExploreScreen.id: (context) => ExploreScreen(),
+        CartScreen.id: (context) => CartScreen()
       },
       home: CollectionScreen(),
       theme: ThemeData(
