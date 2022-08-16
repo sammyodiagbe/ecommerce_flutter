@@ -11,6 +11,24 @@ class ExploreScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppAppBar('Explore', context),
       bottomNavigationBar: CustomBottomNavigationBar(),
+      body: GridView.count(
+        crossAxisCount: 2,
+        mainAxisSpacing: 8,
+        crossAxisSpacing: 8,
+        padding: EdgeInsets.all(10),
+        children: List.generate(
+          10,
+          (index) => index % 3 == 0
+              ? Container(
+                  height: 150,
+                  color: Colors.indigo,
+                )
+              : Container(
+                  height: 100,
+                  color: Colors.black,
+                ),
+        ),
+      ),
     );
   }
 }
