@@ -30,7 +30,7 @@ class ProductScreen extends StatelessWidget {
           Hero(
             tag: 'viewed-product$id',
             child: Container(
-              height: 250,
+              height: 280,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 image: DecorationImage(
@@ -41,7 +41,14 @@ class ProductScreen extends StatelessWidget {
                 color: Colors.indigo,
               ),
             ),
-          )
+          ),
+          SizedBox(height: 20),
+          Text(
+            description,
+            style: TextStyle(
+              fontSize: 24,
+            ),
+          ),
         ],
       ),
     );
