@@ -3,6 +3,7 @@
 import 'package:ecommerce/reuseables/app_bar.dart';
 import 'package:ecommerce/reuseables/custom_bottom_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class ExploreScreen extends StatelessWidget {
   static const String id = 'explore_screen';
@@ -11,24 +12,34 @@ class ExploreScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppAppBar('Explore', context),
       bottomNavigationBar: CustomBottomNavigationBar(),
-      body: GridView.count(
-        crossAxisCount: 2,
-        mainAxisSpacing: 8,
-        crossAxisSpacing: 8,
+      body: GridView.custom(
         padding: EdgeInsets.all(10),
-        children: List.generate(
-          10,
-          (index) => index % 3 == 0
-              ? Container(
-                  height: 150,
-                  color: Colors.indigo,
-                )
-              : Container(
-                  height: 100,
-                  color: Colors.black,
-                ),
+        gridDelegate: SliverWovenGridDelegate.count(
+          crossAxisCount: 3,
+          mainAxisSpacing: 8,
+          crossAxisSpacing: 8,
+          pattern: [
+            WovenGridTile(1),
+            WovenGridTile(
+              5 / 7,
+              crossAxisRatio: 0.9,
+              alignment: AlignmentDirectional.centerEnd,
+            ),
+          ],
+        ),
+        childrenDelegate: SliverChildBuilderDelegate(
+          (context, index) => Tile(index),
         ),
       ),
     );
   }
+}
+
+Widget Tile(int index) {
+  return Container(
+    color: Colors.orange,
+    child: Center(
+      child: Text(index.toString()),
+    ),
+  );
 }
