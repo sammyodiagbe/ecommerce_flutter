@@ -2,6 +2,7 @@
 
 import 'package:ecommerce/reuseables/app_bar.dart';
 import 'package:ecommerce/reuseables/custom_bottom_bar.dart';
+import 'package:ecommerce/reuseables/product_schema.dart';
 import 'package:ecommerce/screens/product_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -49,10 +50,17 @@ Widget Tile(int index, BuildContext context) {
 
   return GestureDetector(
     onTap: () {
-      Navigator.of(context).pushNamed(ProductScreen.id);
+      Navigator.of(context).pushNamed(
+        ProductScreen.id,
+        arguments: ProductArguments(
+            'Product $index',
+            'Some products would be different, but this is just gonna be used to add description to each product so that is how we are gonna do this.',
+            index,
+            url),
+      );
     },
     child: Hero(
-      tag: 'viewed-product',
+      tag: 'viewed-product$index',
       child: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
