@@ -37,6 +37,21 @@ class ExploreScreen extends StatelessWidget {
                 mainAxisCellCount: 1,
                 child: Tile(2, context),
               ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 2,
+                mainAxisCellCount: 3,
+                child: Tile(3, context),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 2,
+                child: Tile(4, context),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 1,
+                child: Tile(6, context),
+              ),
             ],
           ),
         ),
