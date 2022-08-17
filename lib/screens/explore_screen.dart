@@ -12,23 +12,116 @@ class ExploreScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppAppBar('Explore', context),
       bottomNavigationBar: CustomBottomNavigationBar(),
-      body: GridView.custom(
-        padding: EdgeInsets.all(10),
-        gridDelegate: SliverWovenGridDelegate.count(
-          crossAxisCount: 3,
-          mainAxisSpacing: 8,
-          crossAxisSpacing: 8,
-          pattern: [
-            WovenGridTile(1),
-            WovenGridTile(
-              5 / 7,
-              crossAxisRatio: 0.9,
-              alignment: AlignmentDirectional.centerEnd,
-            ),
-          ],
-        ),
-        childrenDelegate: SliverChildBuilderDelegate(
-          (context, index) => Tile(index),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SingleChildScrollView(
+          child: StaggeredGrid.count(
+            crossAxisCount: 3,
+            mainAxisSpacing: 4,
+            crossAxisSpacing: 4,
+            children: [
+              StaggeredGridTile.count(
+                crossAxisCellCount: 2,
+                mainAxisCellCount: 2,
+                child: Tile(0),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 2,
+                mainAxisCellCount: 1,
+                child: Tile(1),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 1,
+                child: Tile(2),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 1,
+                child: Tile(3),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 4,
+                mainAxisCellCount: 2,
+                child: Tile(5),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 2,
+                mainAxisCellCount: 2,
+                child: Tile(6),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 2,
+                mainAxisCellCount: 1,
+                child: Tile(7),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 1,
+                child: Tile(8),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 1,
+                child: Tile(9),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 4,
+                mainAxisCellCount: 2,
+                child: Tile(10),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 2,
+                mainAxisCellCount: 2,
+                child: Tile(11),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 2,
+                mainAxisCellCount: 1,
+                child: Tile(12),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 1,
+                child: Tile(13),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 1,
+                child: Tile(14),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 4,
+                mainAxisCellCount: 2,
+                child: Tile(15),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 2,
+                mainAxisCellCount: 2,
+                child: Tile(16),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 2,
+                mainAxisCellCount: 1,
+                child: Tile(17),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 1,
+                child: Tile(18),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 1,
+                child: Tile(19),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 4,
+                mainAxisCellCount: 2,
+                child: Tile(20),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -36,10 +129,24 @@ class ExploreScreen extends StatelessWidget {
 }
 
 Widget Tile(int index) {
+  final url = 'https://picsum.photos/id/$index/200/300';
+
   return Container(
-    color: Colors.orange,
+    decoration: BoxDecoration(
+      image: DecorationImage(
+        image: NetworkImage(url),
+        fit: BoxFit.cover,
+      ),
+      color: Colors.indigo,
+      borderRadius: BorderRadius.circular(8),
+    ),
     child: Center(
-      child: Text(index.toString()),
+      child: Text(
+        index.toString(),
+        style: TextStyle(
+          color: Colors.white,
+        ),
+      ),
     ),
   );
 }
