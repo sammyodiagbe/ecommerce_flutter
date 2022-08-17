@@ -21,13 +21,13 @@ class ExploreScreen extends StatelessWidget {
             crossAxisSpacing: 4,
             children: [
               StaggeredGridTile.count(
-                crossAxisCellCount: 2,
+                crossAxisCellCount: 1,
                 mainAxisCellCount: 2,
                 child: Tile(0),
               ),
               StaggeredGridTile.count(
-                crossAxisCellCount: 2,
-                mainAxisCellCount: 1,
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 2,
                 child: Tile(1),
               ),
               StaggeredGridTile.count(
@@ -135,7 +135,7 @@ Widget Tile(int index) {
     decoration: BoxDecoration(
       image: DecorationImage(
         image: NetworkImage(url),
-        fit: BoxFit.cover,
+        fit: BoxFit.fill,
       ),
       color: Colors.indigo,
       borderRadius: BorderRadius.circular(8),
