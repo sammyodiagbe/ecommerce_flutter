@@ -3,6 +3,7 @@
 import 'package:ecommerce/screens/cart_screens.dart';
 import 'package:ecommerce/screens/collection_screen.dart';
 import 'package:ecommerce/screens/explore_screen.dart';
+import 'package:ecommerce/screens/product_screen.dart';
 import "package:flutter/material.dart";
 
 void main() {
@@ -17,7 +18,8 @@ class EcommerceApp extends StatelessWidget {
       routes: {
         CollectionScreen.id: (context) => CollectionScreen(),
         ExploreScreen.id: (context) => ExploreScreen(),
-        CartScreen.id: (context) => CartScreen()
+        CartScreen.id: (context) => CartScreen(),
+        ProductScreen.id: (context) => ProductScreen()
       },
       home: CollectionScreen(),
       theme: ThemeData(
