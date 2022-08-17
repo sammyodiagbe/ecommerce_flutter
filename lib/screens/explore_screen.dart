@@ -21,8 +21,8 @@ class ExploreScreen extends StatelessWidget {
             crossAxisSpacing: 4,
             children: [
               StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 2,
+                crossAxisCellCount: 2,
+                mainAxisCellCount: 3,
                 child: Tile(0),
               ),
               StaggeredGridTile.count(
